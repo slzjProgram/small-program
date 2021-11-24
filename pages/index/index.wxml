@@ -1,0 +1,73 @@
+<import src="../template/goods-item/goods-item-template.wxml" />
+<import src="../template/goods-item/goods-item-two-template.wxml" />
+<import src="../template/goods-item/trademark-template.wxml" />
+<import src="../template/category/category-two-template.wxml" />
+<import src="../template/loading/loading.wxml" />
+<import src="../template/search/search-template" />
+<import src="../template/backTop/backTop" />
+
+<view class='home-container'>
+  <view class='home-body'>
+    <!--主题/广告等模块-->
+    <view class='home-index'>
+      <view>
+        <swiper indicator-dots="true" circular="true" autoplay="true" interval="4000" duration="500" >
+          <block wx:for="{{imgUrl}}" wx:key="item">
+            <swiper-item>
+              <view class="swiper-item" data-index='{{index}}'>
+                <image lazy-load='true' src='{{item}}' bindload="imageLoad" mode='aspectFill'></image>
+              </view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+
+  <!-- 导航栏 -->
+  <view class="nav-bar">
+    <view class='nav-bar-item flex-space-between-col'>
+    <view class="circle-pink flex-center">
+      <image src="../../img/bar-pic-1.png"></image>
+    </view>
+    <view>亲自活动</view>
+    </view>
+    <view class='nav-bar-item flex-space-between-col'>
+    <view class="circle-purple  flex-center">
+        <image src="../../img/bar-pic-2.png"></image>
+    </view>
+    <view>研学课程</view>
+    </view>
+     <view class='nav-bar-item flex-space-between-col'>
+    <view class="circle-green flex-center">
+      <image src="../../img/bar-pic-3.png"></image>
+    </view>
+    <view>冬夏令营</view>
+    </view>
+       <view class='nav-bar-item flex-space-between-col'>
+    <view class="circle-blue flex-center">
+        <image src="../../img/bar-pic-4.png"></image>
+    </view>
+    <view>活动直播</view>
+    </view>
+  </view>
+
+
+    <!--双卡片商品列表-->
+    <view class='home-goods-item-two '>
+      <block wx:for="{{goodsItems}}" wx:key="item">
+        <template is="itemTwo" data="{{item,index}}" />
+      </block>
+    </view>
+
+    <!--单卡片商品列表-->
+    <view class=''>
+      <block wx:for="{{goodsItems}}" wx:key="item">
+        <template is="goodsItem" data="{{item,index}}" />
+      </block>
+    </view>
+
+  </view>
+</view>
+<template is="backTop" wx:if="{{backTopValue ==true}}" />
+<template is="loading" wx:if="{{loading}}" />
+<view style='height:40rpx;'></view>

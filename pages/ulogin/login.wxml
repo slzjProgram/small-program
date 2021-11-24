@@ -1,0 +1,32 @@
+<view class="container">
+
+  <form class='formLogin' bindsubmit="loginSubmit" report-submit='true'>
+    <view class="me-title">
+    <view class="me-title-image">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="me-title-nickname">
+      <open-data type="userNickName"></open-data>
+    </view>
+  </view>
+     <view class="row">
+       <image class="userIcon" src="../../resource/images/user.png"></image>
+       <label class="loginLab">账号</label>
+       <input class="loginInput" name="userName" id="userName" type='text' placeholder='请输入账号'/>
+     </view>
+
+     <view class='line'></view>
+
+     <view class="row">
+       <image class="psdIcon" src="../../resource/images/psd.png"></image>
+       <label class="loginLab">密码</label>
+       <input class="loginInput" type='text' password='true' name="password" id="password" placeholder='请输入密码'/>
+     </view>
+
+     <button class="loginBtn" form-type="submit" >登陆</button>
+    
+  </form>
+ <view class="row1">
+      <text>没有账号？</text><text class='register' bindtap='register'>注册</text>
+     </view>
+</view>

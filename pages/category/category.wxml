@@ -1,0 +1,70 @@
+
+<!--index.wxml-->
+<scroll-view>
+
+  <!--轮播图-->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperChange">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="swiper-image" bindtap="swiperClick" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--空白-->
+  <view class="separate"></view>
+  <view wx:if="{{cartShopList}}">
+  <!--最热-->
+  <view class="volume">
+    <view class="category-title">
+      <image class="small-icon-img" src="../../img/volume_small.png"></image>
+      <text class="small-text">最火</text>
+    </view>
+    <!--最最火赛事列表-->
+    <view wx:for="{{cartShopList}}">
+      <view class="ui-flex ui-padding-10" data-item-index = "{{index}}" bindtap = "onItemClick" data-id = "{{item.gamecode}}">
+       <!--A.PIG-->
+       
+        <view>
+          <image class="cart-shop-img" src="{{item.imga}}"></image>
+        </view>    
+        <view class="ui-pl-10 ui-pr-10">
+          <!--A.NAME-->
+          <view class="ui-flex ui-pt-10">
+            <text class="game-score-title">{{item.namea}}</text>
+            <text class="game-score-title">vs</text>
+            <text class="game-score-title">{{item.nameb}}</text>
+          </view>
+          <!--A.FRAME-->
+          <view class="ui-flex ui-pt-10">
+            <text class="game-score-title">{{item.framea}}</text>
+            <text class="game-score-title">FRAME</text>
+            <text class="game-score-title">{{item.frameb}}</text>
+          </view>
+         <view class="ui-flex ui-pt-10">
+            <text class="game-score-title" >{{item.pointa}}</text>
+            <text class="game-score-title">POINT</text>
+            <text class="game-score-title">{{item.pointb}}</text>
+          </view>
+         <view class="ui-flex ui-pt-10">
+            <text class="game-score-title" >{{item.breaka}}</text>
+            <text class="game-score-title">BREAK</text>
+            <text class="game-score-title">{{item.breakb}}</text>
+          </view> 
+        </view>
+        <!--B.PIG-->
+        <view>
+          <image class="cart-shop-img" src="{{item.imgb}}"></image>
+        </view>
+      </view>
+      <view class="line"></view>
+    </view>
+  </view>
+
+ </view>
+<!--空白-->
+ <view class="separate"></view>
+ <!--将要比赛列表-->
+<view class="downline">
+ <text>————我也是有底线的————</text>
+</view>
+</scroll-view>

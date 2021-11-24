@@ -1,0 +1,97 @@
+/* pages/register/register.wxss */
+.me-body{
+    background-color: #e9e9e9;
+    font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+    flex: 1;
+    min-height: 100%;
+    font-size: 16px;
+}
+.row{
+  margin-top: 20rpx;
+  overflow: hidden;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #ccc;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  color: #777;
+  background: #fff;
+ 
+}
+.text-title {
+  font-size: 20rpx;
+  font-weight: bold;
+}
+.info-input{
+  flex: block;
+  float: right;
+  text-align: right;
+  margin-right: 66px;
+  margin-top: 11px;
+  color: black;
+  font-size: 32rpx
+}
+.info-input1{
+  height: 100rpx;
+  margin-left: 50rpx;
+  color: #777;
+    float: left;
+    width: 420rpx;
+}
+.button{
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 20rpx;
+  background: #33FF99;
+  float: left;
+  margin-left: 10rpx;
+  margin-top: 15rpx;
+  color: #FFFFFF;
+}
+.submit{
+  margin-top: 50rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  background: #00CCFF;
+   color: #FFFFFF;
+}
+.success{
+  background: #ffffff;
+}
+.cheer{
+  text-align: center;
+  line-height: 400rpx;
+  font-size: 60rpx;
+  position: relative;
+}
+.return{
+  margin: 20rpx;
+ 
+}
+.loginLab {
+  margin-left: 10rpx;
+  color: #545454;
+  font-size: 32rpx;
+}
+.loginInput {
+  flex: block;
+  float: right;
+  text-align: right;
+  margin-right: 66px;
+  margin-top: 11px;
+  color: black;
+  font-size: 32rpx
+}
+.me-title-image{
+  width: 60px;
+  height: 60px;
+  margin-top:10px; 
+  margin-left:20px;
+  overflow:hidden;  
+  display: block;  
+   border-radius: 5px;  
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);  
+}
+.me-title-nickname{
+  margin: 20px;
+}

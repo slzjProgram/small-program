@@ -1,0 +1,67 @@
+<!-- 容器 -->
+<scroll-view>
+    <view class='text_view'>
+        <text >填写商品信息</text>
+    </view>
+    
+    <!-- <view class='input_view'>
+        <input type="text" placeholder="好唔开心啊" placeholder-class="placeholder-style"/>
+    </view> -->
+    <view class="page-section">
+        <view class="weui-cells__title">商品名称/标题</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <input class="weui-input" value='{{goodsInfoList.title}}' bindinput='goodsInfoChange' data-val="goodsInfoList.title" auto-focus placeholder=""/>
+            </view>
+        </view>
+    </view>
+    <view class="page-section">
+        <view class="weui-cells__title">商品详细信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <input class="weui-input" value='{{goodsInfoList.info}}' bindinput='goodsInfoChange' data-val="goodsInfoList.info" auto-focus placeholder=""/>
+            </view>
+        </view>
+    </view>
+    <view class="page-section">
+        <view class="weui-cells__title">预售数量</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <input class="weui-input" value='{{goodsInfoList.count}}' bindinput='goodsInfoChange' data-val="goodsInfoList.count" auto-focus placeholder=""/>
+            </view>
+        </view>
+    </view>    
+    <view class="page-section">
+        <view class="weui-cells__title">价格</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <input class="weui-input" value='{{goodsInfoList.price}}' bindinput='goodsInfoChange' data-val="goodsInfoList.price" auto-focus placeholder=""/>
+            </view>
+        </view>
+    </view>
+
+
+    <button class="upload_btn2" bindtap='upGoodsInfo'>提交商品信息</button>
+    <view class="separate"></view>
+    <view class='text_view'>
+        <text >上传商品图片</text>
+    </view>
+    <view class='ui_uploader_cell'>
+        <!-- 根据已选择的图片临时路径数组展示图片-->
+        <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+            <!-- 删除-->
+            <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red"/>
+            <!-- 图片-->
+            <image bindtap='showImg'  class='ui_img' data-index="{{index}}" src='{{item}}'></image>
+        </view>
+        <!-- 上传按钮+框 -->
+        <view class='ui_uploader' bindtap='upload' wx:if="{{showUpload}}">
+        	<image src='../../resource/images/plus1.png' style='width:60px;height:60px;'></image>
+        </view>
+
+    </view>
+    <button class="upload_btn2" bindtap='upImg'>上传图片</button>
+</scroll-view>
+<!-- <view class="btn_view">
+	<button class="upload_btn" bindtap='upImg'>确认</button>
+</view> -->

@@ -1,0 +1,21 @@
+<template name="goodsItem">
+
+  <view class="goods-item" bindtap='goodsDetails' data-goodsId='{{item.goodsId}}'>
+    <view class='item-box'>
+      <view>
+        <view>
+          <image class="border-top" src='{{item.PicUrl}}' binderror="binderrorimg" data-errorimg="{{index}}"/>
+          <view class="block-orange border-bottom flex-space-around ui-padding-10-x" style="display:box">
+              <text>距结束:</text>
+              <text> {{item.endTime}}</text>
+          </view> 
+        </view>
+        <view class='goods-item-text'>
+          <view class='goods-item-title'>{{item.Name}}</view>
+          <view class="goods-item-opt">去开团</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</template>

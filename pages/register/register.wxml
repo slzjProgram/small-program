@@ -1,0 +1,55 @@
+<!--pages/register/register.wxml-->
+<view class="me-body">
+  <view class="me-title">
+    <view class="me-title-image">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="me-title-nickname">
+      <open-data type="userNickName"></open-data>
+    </view>
+  </view>
+</view>
+<form bindsubmit="registerSubmit" report-submit='true'>
+ <view class='row'>
+   <label class="loginLab">注册手机号：</label>
+    <input  type='text' class= 'loginInput' name="userName" id="userName" placeholder="请输入注册手机号" placeholder-style='{{placeholder0}}' />
+
+ </view>
+   <view class='row'>
+     <label class="loginLab">姓名：</label>
+               <input type='text' class= 'info-input' name="name" id="name" placeholder-style='{{placeholder3}}' placeholder="请输入你的姓名" />
+    </view>
+  <view class='row'>
+    <label class="loginLab">密码：</label>
+               <input type='text' password='true' class= 'info-input' name="password" id="password" placeholder="请输入你的密码" placeholder-style='{{placeholder1}}'/>
+ 
+ </view>
+  <view class='row'>
+   <label class="loginLab">确认密码：</label>   
+               <input  type='text' password='true' class= 'info-input' name="password2" id="password2" placeholder="请重新输入你的密码" placeholder-style='{{placeholder2}}'/>
+ </view>
+
+ <view style='margin-left:38rpx;margin-top:15px;margin-right:38rpx'>
+      <view style=';display:flex;align-items:center; justify-content:space-between;'>
+        <input bindinput="inputTel" maxlength="11" name="account" placeholder="请输入手机号" style='margin-top:50px;font-size:34rpx'></input>
+        <button bindtap="sendCode" disabled="{{smsFlag}}" style='margin-top:50px;margin-right:10rpx;color:{{sendColor}};font-size:28rpx'>{{sendTime}}</button>
+      </view>
+    </view>
+
+
+  <view class='row'>
+  <label class="loginLab">验证码：</label>
+               <input type='text' class= 'info-input' name="check_code" id="check_code" placeholder="请输入你的验证码" placeholder-style='{{placeholder4}}'/>
+      <button class="me-feedback" open-type='getUserInfo' bindtap='open_checkcode'>
+      <view>
+      <view class="me-feedback-word">
+        短信获取验证码
+      </view>
+    </view>
+  </button> 
+ </view>
+
+ <button class='submit' form-type="submit">注册</button>
+
+ </form>
+
